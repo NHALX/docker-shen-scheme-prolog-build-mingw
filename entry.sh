@@ -24,6 +24,7 @@ fi
 if [ -z "$*" ]; then
   echo "Starting interactive shell for cross-compiling SWI-Prolog"
   echo "Commands:"
+  echo "  cmake_for_shen  -- configuration suitable for Shen"
   echo ""
   echo "  build_win32     -- build 32-bit version in build.win32"
   echo "  build_win64     -- build 64-bit version in build.win64"

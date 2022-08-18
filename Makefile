@@ -1,10 +1,12 @@
-SWIPLSRC=$(HOME)/src/swipl-devel
+SWIPLSRC=/home/nha/code/swipl
+CHEZSRC=/home/nha/code/ChezScheme
+SHENSRC=/home/nha/code/shen-scheme-prolog
 UID=$(shell id -u)
 GID=$(shell id -g)
 IMG=swipl-mingw-f35
 IT=-it
 
-MOUNT=	  -v $(SWIPLSRC):/home/swipl/src/swipl-devel
+MOUNT=	  -v $(SWIPLSRC):/home/swipl/src/swipl-devel -v $(CHEZSRC):/home/ChezScheme -v $(SHENSRC):/home/shen
 MOUNTX11= -v /tmp/.X11-unix:/tmp/.X11-unix
 
 all::

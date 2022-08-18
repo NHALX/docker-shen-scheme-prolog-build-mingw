@@ -36,6 +36,23 @@ build_win64()
   )
 }
 
+cmake_for_shen()
+{ must_be_in_source_root || return 1
+
+  dir=build.win64
+
+  rm -rf $dir
+  mkdir $dir
+  ( cd $dir
+    cmake -DCMAKE_BUILD_TYPE=Debug \
+          -DSWIPL_PACKAGES=OFF \
+          -DO_DEBUG=ON \
+          -DCMAKE_TOOLCHAIN_FILE=../cmake/cross/linux_win64.cmake \
+	      -DSKIP_SSL_TESTS=ON \
+          -G Ninja ..
+  )
+}
+
 build_win32()
 { must_be_in_source_root || return 1
 
